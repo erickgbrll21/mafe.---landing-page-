@@ -33,7 +33,7 @@ export function Hero() {
         />
       </div>
 
-      <div className="container-mefa relative z-10 flex min-h-[calc(100svh-5rem)] flex-col justify-end pb-36 pt-6 sm:pb-40 md:justify-center md:pb-20">
+      <div className="container-mefa relative z-10 flex min-h-[calc(100svh-5rem)] flex-col justify-end pb-64 pt-6 sm:pb-72 md:justify-center md:pb-36">
         <motion.div
           variants={container}
           initial="hidden"

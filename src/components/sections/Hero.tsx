@@ -21,59 +21,47 @@ export function Hero() {
   };
 
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden bg-uva text-white"
-    >
-      {/* Foto de fundo (Duda) — nítida, sem overlay na imagem inteira */}
-      <div aria-hidden className="absolute inset-0">
+    <section id="top" className="relative overflow-hidden bg-cream pt-20">
+      <div aria-hidden className="absolute inset-x-0 bottom-0 top-20">
         <Image
-          src="/assets/hero-duda.png"
+          src="/assets/hero-duda-v2.png"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[72%_30%] sm:object-[75%_center] md:object-[right_center]"
+          className="object-cover object-[75%_28%] sm:object-[77%_center] md:object-[82%_center]"
         />
       </div>
 
-      <div className="container-mefa relative z-10 flex min-h-[100svh] flex-col justify-end pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-24 md:justify-center md:pb-20 md:pt-28">
-        <div className="relative w-full max-w-none md:w-fit md:max-w-md">
-          {/* Blur só atrás do texto — no mobile vira uma faixa inferior compacta */}
-          <div
-            aria-hidden
-            className="absolute -inset-x-6 -bottom-5 -top-4 rounded-t-3xl bg-uva/70 backdrop-blur-xl md:-inset-4 md:rounded-3xl"
-          />
-
-          <motion.div
-            variants={container}
-            initial="hidden"
-            animate="show"
-            className="relative"
-          >
+      <div className="container-mefa relative z-10 flex min-h-[calc(100svh-5rem)] flex-col justify-end pb-36 pt-6 sm:pb-40 md:justify-center md:pb-20">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="w-[52vw] max-w-[16rem] sm:w-auto sm:max-w-sm md:max-w-xl"
+        >
           <motion.span
             variants={item}
-            className="mb-2 inline-flex items-center gap-2 rounded-full border border-lilas/30 px-2.5 py-1 text-[0.55rem] font-medium uppercase tracking-[0.18em] text-lilas md:mb-3 md:px-3 md:py-1.5 md:text-[0.6rem]"
+            className="mb-2 inline-flex items-center gap-2 text-[0.55rem] font-semibold uppercase tracking-[0.22em] text-violeta md:mb-4 md:text-xs"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-lilas" />
             {BRAND.tagline}
           </motion.span>
 
-          <h1 className="font-display text-[1.2rem] font-black leading-[1.18] tracking-tight text-balance sm:text-2xl md:text-3xl lg:text-[2rem]">
+          <h1 className="font-display text-[1.2rem] font-black leading-[1.16] tracking-tight text-uva text-balance sm:text-2xl md:text-[2.25rem] lg:text-4xl">
             <motion.span variants={item} className="block">
               Design com propósito.
             </motion.span>
-            <motion.span variants={item} className="block text-lilas">
+            <motion.span variants={item} className="block">
               Marca com identidade.
             </motion.span>
-            <motion.span variants={item} className="block italic text-white/90">
+            <motion.span variants={item} className="block italic text-violeta">
               Você, do jeito que só você é.
             </motion.span>
           </h1>
 
           <motion.p
             variants={item}
-            className="mt-2.5 max-w-sm text-[0.8rem] leading-relaxed text-lilas/85 md:mt-4 md:text-sm"
+            className="mt-2.5 max-w-[11.5rem] text-[0.65rem] leading-snug text-roxo/80 sm:max-w-xs sm:text-sm md:mt-5 md:max-w-md md:text-base"
           >
             Sou a Duda, fundadora da Mefa — e antes de qualquer coisa, quero
             deixar uma coisa clara: aqui a gente não vende &ldquo;postzinho
@@ -82,11 +70,11 @@ export function Hero() {
 
           <motion.div
             variants={item}
-            className="mt-4 flex flex-row flex-wrap items-center gap-2 md:mt-5 md:gap-2.5"
+            className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center md:mt-7 md:gap-3"
           >
             <a
               href="#orcamento"
-              className="group inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full bg-lilas px-4 py-2.5 text-[0.7rem] font-semibold uppercase tracking-wide text-uva transition-all duration-300 ease-out-expo hover:-translate-y-0.5 hover:bg-white sm:flex-none md:px-5 md:text-xs"
+              className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-violeta px-5 py-2.5 text-[0.7rem] font-semibold uppercase tracking-wide text-white transition-all duration-300 ease-out-expo hover:-translate-y-0.5 hover:bg-uva sm:px-7 sm:text-xs"
             >
               Pedir um orçamento
               <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -95,27 +83,25 @@ export function Hero() {
             </a>
             <a
               href="#projetos"
-              className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full border border-lilas/40 px-4 py-2.5 text-[0.7rem] font-semibold uppercase tracking-wide text-lilas transition-all duration-300 hover:border-lilas hover:bg-lilas/10 sm:flex-none md:px-5 md:text-xs"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-uva/20 px-5 py-2.5 text-[0.7rem] font-semibold uppercase tracking-wide text-uva transition-all duration-300 hover:border-uva hover:bg-uva hover:text-white sm:px-7 sm:text-xs"
             >
               Ver projetos
             </a>
           </motion.div>
         </motion.div>
-        </div>
       </div>
 
-      {/* Indicador de scroll */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-lilas/60 md:flex"
+        className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-uva/40 md:flex"
       >
         <span className="text-[0.65rem] uppercase tracking-[0.3em]">Role</span>
         <motion.span
           animate={reduce ? {} : { y: [0, 8, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-          className="block h-8 w-px bg-gradient-to-b from-lilas to-transparent"
+          className="block h-8 w-px bg-gradient-to-b from-uva/50 to-transparent"
         />
       </motion.div>
     </section>

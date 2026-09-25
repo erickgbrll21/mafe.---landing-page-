@@ -4,51 +4,57 @@ import { BRAND } from "@/lib/content";
 
 export function Contato() {
   return (
-    <footer
-      id="contato"
-      className="relative overflow-hidden bg-uva grain text-white"
-    >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-violeta/40 blur-[130px]"
-      />
+    <footer id="contato" className="relative overflow-hidden bg-uva text-white">
+      <div className="relative min-h-[70svh] overflow-hidden bg-cream text-uva md:min-h-[80svh]">
+        <div aria-hidden className="absolute inset-0">
+          <Image
+            src="/assets/cta-duda.png"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover object-[92%_28%] sm:object-[85%_center] md:object-[right_center]"
+          />
+        </div>
 
-      {/* CTA final */}
-      <div className="container-mefa relative pt-24 md:pt-36">
-        <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-lilas">
-            Vamos criar sua marca?
-          </p>
-        </Reveal>
-        <Reveal delay={0.05}>
-          <h2 className="mt-6 max-w-4xl font-display text-5xl font-black leading-[1] tracking-tight text-balance sm:text-7xl lg:text-8xl">
-            Vamos criar<br />
-            <span className="italic text-lilas">sua marca?</span>
-          </h2>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-lilas/80">
-            Se você chegou até aqui, já deu o primeiro passo. O segundo é só uma
-            mensagem.
-          </p>
-        </Reveal>
-        <Reveal delay={0.15}>
-          <a
-            href={BRAND.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-10 inline-flex items-center gap-3 rounded-full bg-lilas px-9 py-5 text-base font-semibold uppercase tracking-wide text-uva transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:bg-white"
-          >
-            Bora conversar no WhatsApp
-            <span className="transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
-          </a>
-        </Reveal>
+        <div className="container-mefa relative z-10 flex min-h-[70svh] flex-col justify-end pb-44 pt-12 md:min-h-[80svh] md:justify-center md:py-28">
+          <div className="w-[52vw] max-w-[16rem] sm:w-auto sm:max-w-md md:max-w-xl lg:max-w-3xl">
+          <Reveal>
+            <p className="text-[0.6rem] font-semibold uppercase tracking-[0.22em] text-violeta md:text-xs">
+              Vamos criar sua marca?
+            </p>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="mt-3 font-display text-[1.55rem] font-black leading-[1.1] tracking-tight text-balance sm:text-4xl md:mt-5 md:text-6xl lg:text-7xl">
+              Vamos criar
+              <br />
+              <span className="italic text-violeta">sua marca?</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="mt-3 max-w-[10.5rem] space-y-2 text-[0.75rem] leading-relaxed text-roxo/80 sm:max-w-sm sm:text-sm md:mt-6 md:max-w-md md:text-lg">
+              <p>Se você chegou até aqui, já deu o primeiro passo.</p>
+              <p>O segundo é só uma mensagem.</p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <a
+              href={BRAND.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-5 inline-flex items-center gap-2 rounded-full bg-violeta px-5 py-2.5 text-[0.65rem] font-semibold uppercase tracking-wide text-white transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:bg-uva sm:px-7 sm:py-3.5 sm:text-xs md:mt-8 md:px-9 md:py-5 md:text-base"
+            >
+              Bora conversar?
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+          </Reveal>
+          </div>
+        </div>
       </div>
 
       {/* Rodape */}
-      <div className="container-mefa relative mt-24 border-t border-white/10 py-12 md:mt-36">
+      <div className="container-mefa relative border-t border-white/10 py-12">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <Image

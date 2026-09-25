@@ -93,7 +93,8 @@ export type Project = {
   category: ProjectCategory;
   tags: string[];
   description: string;
-  image?: string; // usar asset real quando existir
+  image: string;
+  gallery: string[];
   lab?: boolean;
 };
 
@@ -106,6 +107,14 @@ export const PROJECTS: Project[] = [
     tags: ["Branding", "Identidade Visual", "Papelaria"],
     description:
       "Uma marca que cheira a pão quente e conversa boa. Construímos uma identidade acolhedora, com tipografia caseira e uma paleta que abraça — pra transformar a padaria da esquina em ponto de encontro.",
+    image: "/assets/projetos/papo-de-padeiro/03.png",
+    gallery: [
+      "/assets/projetos/papo-de-padeiro/03.png",
+      "/assets/projetos/papo-de-padeiro/04.png",
+      "/assets/projetos/papo-de-padeiro/01.png",
+      "/assets/projetos/papo-de-padeiro/02.png",
+      "/assets/projetos/papo-de-padeiro/05.png",
+    ],
   },
   {
     slug: "rose-maffille",
@@ -115,6 +124,14 @@ export const PROJECTS: Project[] = [
     tags: ["Branding", "Naming", "Manual de Marca"],
     description:
       "Um espaço que é meio cafeteria, meio hub de negócios. A identidade precisava equilibrar aconchego e sofisticação — uma marca que serve espresso e ideia na mesma mesa.",
+    image: "/assets/projetos/rose-maffille/02.png",
+    gallery: [
+      "/assets/projetos/rose-maffille/02.png",
+      "/assets/projetos/rose-maffille/05.gif",
+      "/assets/projetos/rose-maffille/01.png",
+      "/assets/projetos/rose-maffille/03.png",
+      "/assets/projetos/rose-maffille/04.png",
+    ],
   },
   {
     slug: "aly-social-co",
@@ -124,6 +141,14 @@ export const PROJECTS: Project[] = [
     tags: ["Branding", "Identidade Visual"],
     description:
       "Uma marca de social media que precisava ser tão boa quanto o trabalho que entrega. Criamos um sistema visual vibrante, flexível e inconfundível — feito pra viver bem na tela.",
+    image: "/assets/projetos/aly-social-co/01.png",
+    gallery: [
+      "/assets/projetos/aly-social-co/01.png",
+      "/assets/projetos/aly-social-co/03.png",
+      "/assets/projetos/aly-social-co/02.png",
+      "/assets/projetos/aly-social-co/04.png",
+      "/assets/projetos/aly-social-co/05.png",
+    ],
   },
   {
     slug: "leituras-essenciais",
@@ -133,6 +158,14 @@ export const PROJECTS: Project[] = [
     tags: ["Branding", "Identidade Visual Pessoal"],
     description:
       "Uma marca pessoal para quem faz da leitura profissão e paixão. Uma identidade calma, editorial e elegante — que folheia bem tanto no feed quanto na estante.",
+    image: "/assets/projetos/leituras-essenciais/02.png",
+    gallery: [
+      "/assets/projetos/leituras-essenciais/02.png",
+      "/assets/projetos/leituras-essenciais/03.png",
+      "/assets/projetos/leituras-essenciais/04.png",
+      "/assets/projetos/leituras-essenciais/01.png",
+      "/assets/projetos/leituras-essenciais/05.png",
+    ],
   },
   {
     slug: "criativos-instagram",
@@ -142,6 +175,12 @@ export const PROJECTS: Project[] = [
     tags: ["Redes Sociais", "Criativos", "Feed e Reels"],
     description:
       "Uma linha de criativos pensada peça por peça: feed coeso, reels com ritmo e uma estética que faz parar o dedo. Conteúdo que não é só bonito — é estratégico.",
+    image: "/assets/projetos/criativos-instagram/01.gif",
+    gallery: [
+      "/assets/projetos/criativos-instagram/01.gif",
+      "/assets/projetos/criativos-instagram/02.gif",
+      "/assets/projetos/criativos-instagram/03.webp",
+    ],
   },
 ];
 
@@ -155,6 +194,15 @@ export const LAB_PROJECTS: Project[] = [
     lab: true,
     description:
       "Um exercício livre de identidade: o traço como assinatura, o café como pretexto. Sem cliente, sem briefing — só a vontade de testar até onde uma marca pode ir.",
+    image: "/assets/projetos/o-traco-cafeteria/01.png",
+    gallery: [
+      "/assets/projetos/o-traco-cafeteria/01.png",
+      "/assets/projetos/o-traco-cafeteria/02.png",
+      "/assets/projetos/o-traco-cafeteria/03.png",
+      "/assets/projetos/o-traco-cafeteria/04.png",
+      "/assets/projetos/o-traco-cafeteria/06.png",
+      "/assets/projetos/o-traco-cafeteria/05.png",
+    ],
   },
   {
     slug: "grito-urbano",
@@ -165,6 +213,12 @@ export const LAB_PROJECTS: Project[] = [
     lab: true,
     description:
       "Um estudo tipográfico barulhento, inspirado no concreto e no cartaz colado no poste. Um grito visual — pra lembrar que marca também pode ser manifesto.",
+    image: "/assets/projetos/grito-urbano/01.png",
+    gallery: [
+      "/assets/projetos/grito-urbano/01.png",
+      "/assets/projetos/grito-urbano/02.png",
+      "/assets/projetos/grito-urbano/03.png",
+    ],
   },
 ];
 

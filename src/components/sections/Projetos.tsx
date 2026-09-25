@@ -4,15 +4,18 @@ import { useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "@/components/Reveal";
 import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectModal } from "@/components/ProjectModal";
 import {
   LAB_PROJECTS,
   PORTFOLIO_FILTERS,
   PROJECTS,
   type PortfolioFilter,
+  type Project,
 } from "@/lib/content";
 
 export function Projetos() {
   const [filter, setFilter] = useState<PortfolioFilter>("Todos");
+  const [open, setOpen] = useState<Project | null>(null);
   const reduce = useReducedMotion();
 
   const visible = useMemo(
@@ -69,7 +72,7 @@ export function Projetos() {
           className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           <AnimatePresence mode="popLayout">
-            {visible.map((project, i) => (
+            {visible.map((project) => (
               <motion.div
                 key={project.slug}
                 layout
@@ -78,7 +81,7 @@ export function Projetos() {
                 exit={{ opacity: 0, scale: 0.97 }}
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
               >
-                <ProjectCard project={project} index={i} />
+                <ProjectCard project={project} onOpen={setOpen} />
               </motion.div>
             ))}
           </AnimatePresence>
@@ -105,12 +108,14 @@ export function Projetos() {
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {LAB_PROJECTS.map((project, i) => (
               <Reveal key={project.slug} delay={0.1 + i * 0.08}>
-                <ProjectCard project={project} index={i + 3} />
+                <ProjectCard project={project} onOpen={setOpen} />
               </Reveal>
             ))}
           </div>
         </div>
       </div>
+
+      <ProjectModal project={open} onClose={() => setOpen(null)} />
     </section>
   );
 }

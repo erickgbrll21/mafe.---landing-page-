@@ -32,10 +32,8 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out-expo ${
-        scrolled
-          ? "bg-cream/85 backdrop-blur-md shadow-[0_1px_0_rgba(61,3,86,0.08)]"
-          : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 bg-cream transition-shadow duration-500 ease-out-expo ${
+        scrolled ? "shadow-[0_1px_0_rgba(61,3,86,0.08)]" : ""
       }`}
     >
       <div className="container-mefa flex h-20 items-center justify-between">

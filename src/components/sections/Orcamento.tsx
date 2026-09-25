@@ -176,7 +176,7 @@ export function Orcamento() {
                   key="form"
                   noValidate
                   onSubmit={onSubmit}
-                  initial={{ opacity: 0 }}
+                  initial={false}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   className="rounded-3xl border border-uva/10 bg-white p-6 sm:p-9"

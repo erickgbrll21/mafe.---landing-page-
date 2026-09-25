@@ -4,34 +4,45 @@ import { BRAND } from "@/lib/content";
 
 export function Contato() {
   return (
-    <footer id="contato" className="relative overflow-hidden bg-uva text-white">
+    <footer id="contato" className="relative scroll-mt-20 overflow-hidden bg-uva text-white">
       <div className="relative min-h-[70svh] overflow-hidden bg-cream text-uva md:min-h-[80svh]">
         <div aria-hidden className="absolute inset-0">
-          <Image
-            src="/assets/cta-duda.png"
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover object-[92%_28%] sm:object-[85%_center] md:object-[right_center]"
-          />
+          <div className="absolute inset-0 md:hidden">
+            <Image
+              src="/assets/cta-duda-mobile.png"
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover object-bottom"
+            />
+          </div>
+          <div className="absolute inset-0 hidden md:block">
+            <Image
+              src="/assets/cta-duda.png"
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover object-[right_center]"
+            />
+          </div>
         </div>
 
-        <div className="container-mefa relative z-10 flex min-h-[70svh] flex-col justify-end pb-44 pt-12 md:min-h-[80svh] md:justify-center md:py-28">
-          <div className="w-[52vw] max-w-[16rem] sm:w-auto sm:max-w-md md:max-w-xl lg:max-w-3xl">
+        <div className="container-mefa relative z-20 flex min-h-[100svh] flex-col justify-start pb-8 pt-24 md:min-h-[80svh] md:justify-center md:py-28">
+          <div className="w-full max-w-[20.5rem] md:max-w-xl lg:max-w-3xl">
           <Reveal>
-            <p className="text-[0.6rem] font-semibold uppercase tracking-[0.22em] text-violeta md:text-xs">
+            <p className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-violeta md:text-xs">
               Vamos criar sua marca?
             </p>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="mt-3 font-display text-[1.55rem] font-black leading-[1.1] tracking-tight text-balance sm:text-4xl md:mt-5 md:text-6xl lg:text-7xl">
+            <h2 className="mt-2 font-display text-[1.75rem] font-black leading-[1.08] tracking-tight text-balance sm:text-4xl md:mt-5 md:text-6xl lg:text-7xl">
               Vamos criar
               <br />
               <span className="italic text-violeta">sua marca?</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="mt-3 max-w-[10.5rem] space-y-2 text-[0.75rem] leading-relaxed text-roxo/80 sm:max-w-sm sm:text-sm md:mt-6 md:max-w-md md:text-lg">
+            <div className="mt-2.5 max-w-[16.5rem] space-y-1 text-[0.78rem] leading-snug text-roxo/80 md:mt-6 md:max-w-md md:text-lg md:leading-relaxed">
               <p>Se você chegou até aqui, já deu o primeiro passo.</p>
               <p>O segundo é só uma mensagem.</p>
             </div>
@@ -41,7 +52,7 @@ export function Contato() {
               href={BRAND.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-5 inline-flex items-center gap-2 rounded-full bg-violeta px-5 py-2.5 text-[0.65rem] font-semibold uppercase tracking-wide text-white transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:bg-uva sm:px-7 sm:py-3.5 sm:text-xs md:mt-8 md:px-9 md:py-5 md:text-base"
+              className="group mt-4 inline-flex min-h-10 items-center gap-2 rounded-full bg-violeta px-5 py-2.5 text-[0.65rem] font-semibold uppercase tracking-wide text-white transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:bg-uva sm:min-h-11 sm:px-7 sm:py-3.5 sm:text-xs md:mt-8 md:px-9 md:py-5 md:text-base"
             >
               Bora conversar?
               <span className="transition-transform duration-300 group-hover:translate-x-1">

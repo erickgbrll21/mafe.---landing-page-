@@ -23,31 +23,43 @@ export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-cream pt-20">
       <div aria-hidden className="absolute inset-x-0 bottom-0 top-20">
-        <Image
-          src="/assets/hero-duda-v2.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[75%_28%] sm:object-[77%_center] md:object-[82%_center]"
-        />
+        <div className="absolute inset-0 md:hidden">
+          <Image
+            src="/assets/hero-duda-mobile.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-bottom"
+          />
+        </div>
+        <div className="absolute inset-0 hidden md:block">
+          <Image
+            src="/assets/hero-duda-v2.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[82%_center]"
+          />
+        </div>
       </div>
 
-      <div className="container-mefa relative z-10 flex min-h-[calc(100svh-5rem)] flex-col justify-end pb-64 pt-6 sm:pb-72 md:justify-center md:pb-36">
+      <div className="container-mefa relative z-20 flex min-h-[calc(100svh-5rem)] flex-col justify-start pb-8 pt-3 md:justify-center md:pb-36 md:pt-6">
         <motion.div
           variants={container}
-          initial="hidden"
+          initial={false}
           animate="show"
-          className="w-[52vw] max-w-[16rem] sm:w-auto sm:max-w-sm md:max-w-xl"
+          className="w-full max-w-[20.5rem] md:max-w-xl"
         >
           <motion.span
             variants={item}
-            className="mb-2 inline-flex items-center gap-2 text-[0.55rem] font-semibold uppercase tracking-[0.22em] text-violeta md:mb-4 md:text-xs"
+            className="mb-2 inline-flex items-center gap-2 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-violeta md:mb-4 md:text-xs"
           >
             {BRAND.tagline}
           </motion.span>
 
-          <h1 className="font-display text-[1.2rem] font-black leading-[1.16] tracking-tight text-uva text-balance sm:text-2xl md:text-[2.25rem] lg:text-4xl">
+          <h1 className="font-display text-[1.45rem] font-black leading-[1.12] tracking-tight text-uva text-balance sm:text-2xl md:text-[2.25rem] lg:text-4xl">
             <motion.span variants={item} className="block">
               Design com propósito.
             </motion.span>
@@ -61,20 +73,26 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-2.5 max-w-[11.5rem] text-[0.65rem] leading-snug text-roxo/80 sm:max-w-xs sm:text-sm md:mt-5 md:max-w-md md:text-base"
+            className="mt-2 max-w-[16.5rem] text-[0.72rem] leading-snug text-roxo/80 md:mt-5 md:max-w-md md:text-base"
           >
-            Sou a Duda, fundadora da Mefa — e antes de qualquer coisa, quero
-            deixar uma coisa clara: aqui a gente não vende &ldquo;postzinho
-            bonito&rdquo;. A gente constrói identidade.
+            <span className="md:hidden">
+              A gente não vende &ldquo;postzinho bonito&rdquo;. A gente
+              constrói identidade.
+            </span>
+            <span className="hidden md:inline">
+              Sou a Duda, fundadora da Mefa — e antes de qualquer coisa, quero
+              deixar uma coisa clara: aqui a gente não vende &ldquo;postzinho
+              bonito&rdquo;. A gente constrói identidade.
+            </span>
           </motion.p>
 
           <motion.div
             variants={item}
-            className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center md:mt-7 md:gap-3"
+            className="mt-3 flex flex-row flex-wrap items-center gap-2 md:mt-7 md:gap-3"
           >
             <a
               href="#orcamento"
-              className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-violeta px-5 py-2.5 text-[0.7rem] font-semibold uppercase tracking-wide text-white transition-all duration-300 ease-out-expo hover:-translate-y-0.5 hover:bg-uva sm:px-7 sm:text-xs"
+              className="group inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-violeta px-4 py-2 text-[0.62rem] font-semibold uppercase tracking-wide text-white transition-all duration-300 ease-out-expo hover:-translate-y-0.5 hover:bg-uva sm:min-h-11 sm:px-7 sm:text-xs"
             >
               Pedir um orçamento
               <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -83,7 +101,7 @@ export function Hero() {
             </a>
             <a
               href="#projetos"
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-uva/20 px-5 py-2.5 text-[0.7rem] font-semibold uppercase tracking-wide text-uva transition-all duration-300 hover:border-uva hover:bg-uva hover:text-white sm:px-7 sm:text-xs"
+              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-uva/20 px-4 py-2 text-[0.62rem] font-semibold uppercase tracking-wide text-uva transition-all duration-300 hover:border-uva hover:bg-uva hover:text-white sm:min-h-11 sm:px-7 sm:text-xs"
             >
               Ver projetos
             </a>
@@ -92,7 +110,7 @@ export function Hero() {
       </div>
 
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={false}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
         className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-uva/40 md:flex"

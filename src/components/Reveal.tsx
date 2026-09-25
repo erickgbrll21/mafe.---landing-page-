@@ -42,9 +42,9 @@ export function Reveal({
     <MotionTag
       className={className}
       variants={variants}
-      initial="hidden"
+      initial={false}
       whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, amount: 0.15 }}
     >
       {children}
     </MotionTag>
@@ -67,9 +67,9 @@ export function RevealGroup({
   return (
     <MotionTag
       className={className}
-      initial="hidden"
+      initial={false}
       whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, amount: 0.15 }}
       variants={{
         hidden: {},
         show: { transition: { staggerChildren: stagger } },

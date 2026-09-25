@@ -92,6 +92,14 @@ body {
   }
 }
 
+/* Sem JS (ou hidratação quebrada), o Framer não pode deixar texto em opacity:0 */
+@media (scripting: none) {
+  [style] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

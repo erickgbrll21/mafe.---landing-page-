@@ -32,6 +32,10 @@ export function Hero() {
             sizes="100vw"
             className="object-cover object-bottom"
           />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent via-cream/75 to-cream"
+          />
         </div>
         <div className="absolute inset-0 hidden md:block">
           <Image
@@ -88,11 +92,11 @@ export function Hero() {
 
           <motion.div
             variants={item}
-            className="mt-3 flex flex-row flex-wrap items-center gap-2 md:mt-7 md:gap-3"
+            className="mt-2 flex flex-col items-start gap-1.5 md:mt-7 md:flex-row md:items-center md:gap-3"
           >
             <a
               href="#orcamento"
-              className="group inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-violeta px-4 py-2 text-[0.62rem] font-semibold uppercase tracking-wide text-white transition-all duration-300 ease-out-expo hover:-translate-y-0.5 hover:bg-uva sm:min-h-11 sm:px-7 sm:text-xs"
+              className="group inline-flex min-h-8 items-center justify-center gap-1.5 rounded-full bg-violeta px-3 py-1.5 text-[0.55rem] font-semibold uppercase tracking-wide text-white transition-all duration-300 ease-out-expo hover:-translate-y-0.5 hover:bg-uva md:min-h-11 md:px-7 md:text-xs"
             >
               Pedir um orçamento
               <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -101,7 +105,7 @@ export function Hero() {
             </a>
             <a
               href="#projetos"
-              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-uva/20 px-4 py-2 text-[0.62rem] font-semibold uppercase tracking-wide text-uva transition-all duration-300 hover:border-uva hover:bg-uva hover:text-white sm:min-h-11 sm:px-7 sm:text-xs"
+              className="inline-flex min-h-8 items-center justify-center gap-1.5 rounded-full border border-uva/20 px-3 py-1.5 text-[0.55rem] font-semibold uppercase tracking-wide text-uva transition-all duration-300 hover:border-uva hover:bg-uva hover:text-white md:min-h-11 md:px-7 md:text-xs"
             >
               Ver projetos
             </a>
